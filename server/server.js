@@ -30,7 +30,7 @@ app,use((err,req,res,next)=>{
 })
 
 app.listen(PORT,()=>{
-    onsole.log("server is running on port ${PORT}");
+    console.log("server is running on port ${PORT}");
 });
 
 
