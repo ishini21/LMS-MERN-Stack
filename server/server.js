@@ -9,7 +9,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 cors({
     origin : process.env.CLIENT_URL,
-    methods : ["GET", "POST", "PUT", "DELETE"],
+    methods : ["GET", "POST", "PUT", "DELETE"], 
     allowedHeaders: ["Content-Type", "Authorization"],
 });
 
@@ -21,7 +21,13 @@ mongoose.connect(MONGO_URI)
 .then(() => console.log("mongodb is connected"))
 .catch((err) => console.log(err));
 
-app,use((err,req,res,next)=>{
+
+//routes configuration
+
+
+
+
+app.use((err,req,res,next)=>{
     console.log(err.stack);
     res.status(500).json({
         success : false,
@@ -30,7 +36,7 @@ app,use((err,req,res,next)=>{
 })
 
 app.listen(PORT,()=>{
-    console.log("server is running on port ${PORT}");
+    console.log(`server is running on port ${PORT}`);
 });
 
 
